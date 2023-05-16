@@ -16,11 +16,7 @@ function App() {
   return (
     <>
       <div>
-        {
-          <Button color="success" onClick={() => setAlertVisible(true)}>
-            My Button
-          </Button>
-        }
+        {<Button onClick={() => setAlertVisible(true)}>My Button</Button>}
         {alertVisible && (
           <Alert onClose={() => setAlertVisible(false)}>My alert</Alert>
         )}
