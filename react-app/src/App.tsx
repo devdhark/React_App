@@ -6,6 +6,8 @@ import "./App.css";
 import { BsFillCalendarFill } from "react-icons/bs";
 import Like from "./components/Like";
 import { produce } from "immer";
+import NavBar from "./components/NavBar/NavBar";
+import Cart from "./components/Cart/Cart";
 
 function App() {
   const [alertVisible, setAlertVisible] = useState(false);
@@ -69,17 +71,13 @@ function App() {
     );
   };
 
+  const [cartItems, setCartItems] = useState(["Product1", "Product2"]);
+
   return (
-    <>
-      <div>
-        {bugs.map((bug) => (
-          <p key={bug.id}>
-            {bug.title} {bug.fixed ? "Fixed" : "New"}
-          </p>
-        ))}
-        <button onClick={handleBugClick}>Click me</button>
-      </div>
-    </>
+    <div>
+      <NavBar cartItemsCount={cartItems.length}></NavBar>
+      <Cart cartItems={cartItems} onClear={() => setCartItems([])}></Cart>
+    </div>
   );
 }
 
