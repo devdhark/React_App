@@ -5,6 +5,7 @@ import Button from "./components/Button";
 import "./App.css";
 import { BsFillCalendarFill } from "react-icons/bs";
 import Like from "./components/Like";
+import { produce } from "immer";
 
 function App() {
   const [alertVisible, setAlertVisible] = useState(false);
@@ -59,13 +60,24 @@ function App() {
   ]);
 
   const handleBugClick = () => {
-    setBugs(bugs.map((bug) => (bug.id === 1 ? { ...bug, fixed: true } : bug)));
+    //setBugs(bugs.map((bug) => (bug.id === 1 ? { ...bug, fixed: true } : bug)));
+    setBugs(
+      produce((draft) => {
+        const bug = draft.find((bug) => bug.id === 1);
+        if (bug) bug.fixed = true;
+      })
+    );
   };
 
   return (
     <>
       <div>
-        <button onClick={handleCustomerClick}>Click me</button>
+        {bugs.map((bug) => (
+          <p key={bug.id}>
+            {bug.title} {bug.fixed ? "Fixed" : "New"}
+          </p>
+        ))}
+        <button onClick={handleBugClick}>Click me</button>
       </div>
     </>
   );
