@@ -82,20 +82,7 @@ function App() {
 
   return (
     <div>
-      <Expandable MaxChars={10}>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet iste
-        cumque veniam dolores itaque deserunt, repudiandae eaque provident quasi
-        sed, voluptatem fugit nulla accusamus inventore! Officia impedit vitae
-        quasi tenetur tempora porro, blanditiis deserunt sed repellat corporis
-        eos aut quis temporibus ad similique, placeat quam cupiditate officiis
-        necessitatibus, labore aspernatur nisi. Perferendis unde maxime
-        voluptates aliquam magnam recusandae fuga, enim quas id repellendus
-        tempora fugiat architecto nesciunt suscipit cupiditate necessitatibus
-        soluta, nobis cum quod ipsam vero, sint impedit nostrum sequi!
-        Perspiciatis sapiente quae ullam laboriosam, laborum, veritatis et saepe
-        dolorum nostrum labore aperiam voluptatum quis vero reiciendis earum
-        tenetur reprehenderit!
-      </Expandable>
+      <Expandable MaxChars={10}>Loergfsdfre</Expandable>
     </div>
   );
 }

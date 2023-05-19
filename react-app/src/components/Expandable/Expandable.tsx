@@ -3,10 +3,10 @@ import styles from "./Expandable.module.css";
 
 interface Props {
   children: string;
-  MaxChars: number;
+  MaxChars?: number;
 }
 
-const Expandable = ({ children, MaxChars }: Props) => {
+const Expandable = ({ children, MaxChars = 100 }: Props) => {
   const [more, setMore] = useState(false);
 
   const handleMoreClick = () => {
@@ -35,7 +35,9 @@ const Expandable = ({ children, MaxChars }: Props) => {
     }
     return <p>Less</p>;
   };
-
+  if (children.length <= MaxChars) {
+    return <p>{children}</p>;
+  }
   return <p>{expandableText()}</p>;
 };
 
