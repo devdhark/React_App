@@ -73,10 +73,16 @@ function App() {
 
   const [cartItems, setCartItems] = useState(["Product1", "Product2"]);
 
+  const [game, setGame] = useState({ id: 1, player: { name: "John" } });
+
+  const handleGameClick = () => {
+    setGame({ ...game, player: { name: "bob" } });
+  };
+
   return (
     <div>
-      <NavBar cartItemsCount={cartItems.length}></NavBar>
-      <Cart cartItems={cartItems} onClear={() => setCartItems([])}></Cart>
+      <button onClick={handleGameClick}>Click</button>
+      <p>{game.player.name}</p>
     </div>
   );
 }
