@@ -17,6 +17,12 @@ function App() {
     lastName: "",
   });
 
+  const [drink, setDrink] = useState({ title: "Americano", price: 5 });
+
+  const handleClick = () => {
+    setDrink({ ...drink, price: 6 });
+  };
+
   const [isLoading, setLoading] = useState(false);
   const fullName = person.firstName + " " + person.lastName;
 
@@ -24,7 +30,11 @@ function App() {
 
   return (
     <>
-      <div>{fullName}</div>
+      <div>
+        {drink.title}
+        {drink.price}
+        <button onClick={handleClick}>Click me</button>
+      </div>
     </>
   );
 }
