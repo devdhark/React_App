@@ -18,7 +18,7 @@ function App() {
   });
 
   const [isLoading, setLoading] = useState(false);
-  const fullName = firstName + " " + lastName;
+  const fullName = person.firstName + " " + person.lastName;
 
   let items = ["New York", "Chicago", "Tokyo", "Atlanta", "Dallas"];
 
