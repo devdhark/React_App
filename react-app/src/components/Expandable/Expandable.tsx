@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import styles from "./Expandable.module.css";
 
 interface Props {
-  MaxChars: number;
   children: string;
+  MaxChars: number;
 }
 
-const Expandable = ({ MaxChars, children }: Props) => {
+const Expandable = ({ children, MaxChars }: Props) => {
   const [more, setMore] = useState(false);
 
   const handleMoreClick = () => {
@@ -30,6 +30,7 @@ const Expandable = ({ MaxChars, children }: Props) => {
   return (
     <>
       {expandableText()}
+      <p>...</p>
       <button onClick={handleMoreClick}>{moreLessText()}</button>
     </>
   );
