@@ -8,6 +8,7 @@ import Like from "./components/Like";
 import { produce } from "immer";
 import NavBar from "./components/NavBar/NavBar";
 import Cart from "./components/Cart/Cart";
+import Expandable from "./components/Expandable/Expandable";
 
 function App() {
   const [alertVisible, setAlertVisible] = useState(false);
@@ -81,8 +82,7 @@ function App() {
 
   return (
     <div>
-      <button onClick={handleGameClick}>Click</button>
-      <p>{game.player.name}</p>
+      <Expandable MaxChars={10}></Expandable>
     </div>
   );
 }
