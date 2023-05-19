@@ -14,10 +14,19 @@ const Expandable = ({ children, MaxChars }: Props) => {
   };
 
   const expandableText = () => {
+    let text;
     if (!more) {
-      return <p>{children.slice(0, MaxChars)}</p>;
+      text = children.substring(0, MaxChars) + "...";
+    } else {
+      text = children;
     }
-    return children;
+
+    return (
+      <p>
+        {text}
+        <button onClick={handleMoreClick}>{moreLessText()}</button>
+      </p>
+    );
   };
 
   const moreLessText = () => {
@@ -27,13 +36,7 @@ const Expandable = ({ children, MaxChars }: Props) => {
     return <p>Less</p>;
   };
 
-  return (
-    <>
-      {expandableText()}
-      <p>...</p>
-      <button onClick={handleMoreClick}>{moreLessText()}</button>
-    </>
-  );
+  return <p>{expandableText()}</p>;
 };
 
 export default Expandable;
