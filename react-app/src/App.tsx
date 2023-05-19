@@ -4,6 +4,7 @@ import Alert from "./components/Alert";
 import Button from "./components/Button";
 import "./App.css";
 import { BsFillCalendarFill } from "react-icons/bs";
+import Like from "./components/Like";
 
 function App() {
   const [alertVisible, setAlertVisible] = useState(false);
@@ -31,6 +32,9 @@ function App() {
       </div>
       <div>
         <BsFillCalendarFill color="red" size="40" />
+      </div>
+      <div>
+        <Like onClick={() => console.log("clicked")}></Like>
       </div>
     </>
   );
