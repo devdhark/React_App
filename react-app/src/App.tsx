@@ -28,12 +28,22 @@ function App() {
 
   let items = ["New York", "Chicago", "Tokyo", "Atlanta", "Dallas"];
 
+  const [customer, setCustomer] = useState({
+    name: "John",
+    address: { city: "San Francisco", zipCode: 94111 },
+  });
+
+  const handleCustomerClick = () => {
+    setCustomer({
+      ...customer,
+      address: { ...customer.address, zipCode: 94112 },
+    });
+  };
+
   return (
     <>
       <div>
-        {drink.title}
-        {drink.price}
-        <button onClick={handleClick}>Click me</button>
+        <button onClick={handleCustomerClick}>Click me</button>
       </div>
     </>
   );
