@@ -76,7 +76,7 @@ function App() {
   const [game, setGame] = useState({ id: 1, player: { name: "John" } });
 
   const handleGameClick = () => {
-    setGame({ ...game, player: { name: "bob" } });
+    setGame({ ...game, player: { ...game.player, name: "bob" } });
   };
 
   return (
