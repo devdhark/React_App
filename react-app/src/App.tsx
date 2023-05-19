@@ -40,6 +40,19 @@ function App() {
     });
   };
 
+  const [tags, setTags] = useState(["happy", "cheerful"]);
+
+  const handleTagClick = () => {
+    // add an element to state variable
+    setTags([...tags, "excited"]);
+
+    //remove an element to state variable
+    setTags(tags.filter((tag) => tag !== "happy"));
+
+    // Update
+    setTags(tags.map((tag) => (tag === "happy" ? "happiness" : tag)));
+  };
+
   return (
     <>
       <div>
