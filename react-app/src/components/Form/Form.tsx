@@ -1,6 +1,10 @@
 import React, { FormEvent, useState } from "react";
+import { useForm } from "react-hook-form";
 
 const Form = () => {
+  const { register } = useForm();
+  console.log(register("name"));
+
   const [person, setPerson] = useState({ name: "", age: "" });
 
   const handleSubmit = (event: FormEvent) => {
