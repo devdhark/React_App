@@ -17,25 +17,29 @@ function App() {
       id: 2,
       description: "expense2",
       amount: 45,
-      category: "category2",
+      category: "Entertainment",
     },
     {
       id: 3,
       description: "expense3",
       amount: 67,
-      category: "category1",
+      category: "Entertainment",
     },
     {
       id: 4,
       description: "expense4",
       amount: 23,
-      category: "category2",
+      category: "Groceries",
     },
   ]);
 
   const onDelete = (id: number) => {
-    setExpenses(expenses.filter((e) => e.id !== id));
+    setExpenses(expenses.filter((e) => e.id === id));
   };
+
+  const visibleExpenses = selectedCategory
+    ? expenses.filter((e) => e.category === selectedCategory)
+    : expenses;
 
   return (
     <div>
@@ -45,7 +49,7 @@ function App() {
         ></ExpenseFilter>
       </div>
       <ExpenseList
-        expenses={expenses}
+        expenses={visibleExpenses}
         onDelete={(id) => onDelete(id)}
       ></ExpenseList>
     </div>
