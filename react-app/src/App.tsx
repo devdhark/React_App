@@ -34,7 +34,7 @@ function App() {
   ]);
 
   const onDelete = (id: number) => {
-    setExpenses(expenses.filter((e) => e.id === id));
+    setExpenses(expenses.filter((e) => e.id !== id));
   };
 
   const visibleExpenses = selectedCategory
