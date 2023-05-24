@@ -48,7 +48,10 @@ function App() {
       <div className="mb-5">
         <ExpenseForm
           onSubmit={(expense) =>
-            setExpenses([...expenses, { ...expense, id: expenses.length + 1 }])
+            setExpenses([
+              ...expenses,
+              { ...expense, id: expenses[expenses.length - 1].id + 1 },
+            ])
           }
         />
       </div>
