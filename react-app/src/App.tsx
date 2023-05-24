@@ -1,8 +1,11 @@
 import { useState } from "react";
 import Form from "./components/Form/Form";
 import ExpenseList from "./expense-tracker/components/ExpenseList";
+import ExpenseFilter from "./expense-tracker/components/ExpenseFilter";
 
 function App() {
+  const [selectedCategory, setSelectedCategory] = useState("");
+
   const [expenses, setExpenses] = useState([
     {
       id: 1,
@@ -36,6 +39,11 @@ function App() {
 
   return (
     <div>
+      <div className="mb-3">
+        <ExpenseFilter
+          onSelectCategory={(category) => setSelectedCategory(category)}
+        ></ExpenseFilter>
+      </div>
       <ExpenseList
         expenses={expenses}
         onDelete={(id) => onDelete(id)}
