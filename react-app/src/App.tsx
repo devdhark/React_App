@@ -1,10 +1,15 @@
 import React, { useEffect, useRef, useState } from "react";
 import ProductList from "./expense-tracker/components/ProductList";
+
+const connect = () => console.log("Connecting");
+const disconnect = () => console.log("Disconnecting");
+
 const App = () => {
   const [category, setCategory] = useState("");
   // afterRender
   useEffect(() => {
-    document.title = "My App";
+    connect();
+    return () => disconnect();
   });
 
   return (
