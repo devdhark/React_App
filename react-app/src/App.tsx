@@ -1,29 +1,26 @@
-import React, { useEffect, useRef, useState } from "react";
-import ProductList from "./expense-tracker/components/ProductList";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 
-const connect = () => console.log("Connecting");
-const disconnect = () => console.log("Disconnecting");
+interface User {
+  id: number;
+  name: string;
+}
 
 const App = () => {
-  const [category, setCategory] = useState("");
-  // afterRender
+  const [users, setUsers] = useState<User[]>([]);
+
   useEffect(() => {
-    connect();
-    return () => disconnect();
-  });
+    axios
+      .get<User[]>("https://jsonplaceholder.typicode.com/users")
+      .then((response) => setUsers(response.data));
+  }, []);
 
   return (
-    <div>
-      <select
-        className="form-select"
-        onChange={(event) => setCategory(event.target.value)}
-      >
-        <option value=""></option>
-        <option value="Clothing">Clothing</option>
-        <option value="Household">Household</option>
-      </select>
-      <ProductList category={category} />
-    </div>
+    <ul>
+      {users.map((user) => (
+        <li key={user.id}>{user.name}</li>
+      ))}
+    </ul>
   );
 };
 
