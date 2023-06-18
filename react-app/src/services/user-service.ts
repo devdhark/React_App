@@ -20,6 +20,13 @@ class UserService {
         const request = apiClient.delete("/users/" + user.id)
         return {request}
     }
+
+    addUser(user: User) {
+        const request = apiClient
+        .post("/users", user)
+        
+        return {request}
+    }
 }
 
 export default new UserService();
