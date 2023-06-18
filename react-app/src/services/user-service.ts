@@ -27,6 +27,12 @@ class UserService {
         
         return {request}
     }
+
+    updateUser(user: User) {
+        const request = apiClient.patch("/users/", +user.id)
+        
+        return {request}
+    }
 }
 
 export default new UserService();
