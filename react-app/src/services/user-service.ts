@@ -16,8 +16,8 @@ class UserService {
         return {request, cancel: () => controller.abort()}
     }
 
-    deleteUser(user: User) {
-        const request = apiClient.delete("/users/" + user.id)
+    deleteUser(id: Number) {
+        const request = apiClient.delete("/users/" + id)
         return {request}
     }
 

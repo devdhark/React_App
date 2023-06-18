@@ -30,7 +30,7 @@ const App = () => {
     const originalUsers = [...users];
     setUsers(users.filter((u) => u.id !== user.id));
 
-    const { request } = userservice.deleteUser(user);
+    const { request } = userservice.deleteUser(user.id);
 
     request.catch((err) => {
       setError(err.message);
@@ -61,7 +61,7 @@ const App = () => {
 
     setUsers(users.map((u) => (u.id === user.id ? updatedUser : u)));
 
-    const { request } = userService.updateUser(user);
+    const { request } = userService.updateUser(updatedUser);
 
     request.catch((err) => {
       setError(err.message);
