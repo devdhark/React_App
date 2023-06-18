@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import apiClient, { CanceledError } from "./services/api-client";
+import { CanceledError } from "./services/api-client";
 import userservice, { User } from "./services/user-service";
 import userService from "./services/user-service";
 
