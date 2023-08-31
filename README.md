@@ -9,5 +9,9 @@ Some of the reusable components developed are:
 - Game Card: A card description of a Video Game which contains a photo and details about the game. 
 - Game Grid which contains all the game cards
 - Navigation Bar which can be used to search the library.
+- Filter Dropdown menu's which is used to filter by a particular attribute like categories.
+
+<img width="1128" alt="image" src="https://github.com/devdhark/React_App/assets/43688678/7f1858bb-d24b-4fc3-aca2-7885554757b8">
+
 
 Backend API :- https://rawg.io/
